@@ -1,0 +1,48 @@
+# Корень репозитория: в git только application/
+*
+!.gitignore
+!application/
+!application/**
+
+# --- Системное и IDE ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+
+# --- Python (backend) ---
+application/backend/venv/
+application/backend/.venv/
+application/backend/__pycache__/
+application/backend/**/__pycache__/
+application/backend/*.pyc
+application/backend/**/*.pyc
+application/backend/.env
+application/backend/.env.*
+application/backend/*.db
+application/backend/**/*.db
+
+# Данные приложения: загрузки, кадры, результаты реконструкции
+application/backend/data/
+
+# --- Node / frontend ---
+application/web/node_modules/
+application/web/dist/
+application/web/dist-ssr/
+application/web/*.local
+
+# --- Логи и замеры пайплайна (COLMAP / OpenMVS / shell-скрипты) ---
+**/pipeline_timing.log
+**/pipeline_timing.tsv
+**/*_run.log
+**/mvs_run.log
+
+# npm/yarn (если логи попадут вне node_modules)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
